@@ -4,7 +4,7 @@ const app = express();
 app.use(express.json());
 const users = require("./users");
 
-const { Kafka } = require("kafkajs");
+const { Kafka, Partitioners } = require("kafkajs");
 
 console.log("KAFKA_HOST: ", process.env.KAFKA_HOST);
 const kafka = new Kafka({
@@ -12,7 +12,9 @@ const kafka = new Kafka({
   brokers: [`${process.env.KAFKA_HOST}:9092`],
 });
 
-const producer = kafka.producer();
+const producer = kafka.producer({
+  createPartitioner: Partitioners.LegacyPartitioner,
+});
 
 app.post("/login", async function (req, res) {
   const user = req.body.user;
@@ -20,7 +22,7 @@ app.post("/login", async function (req, res) {
   const blockedUsersFile = await fs.readFile("/blockedUsers.json", "utf-8");
   const blockedUsers = JSON.parse(blockedUsersFile);
   if (blockedUsers.find((blockedUser) => blockedUser == user)) {
-    return res.json({ login: false, error: "user blocked" });
+    return res.status(401).json({ login: false, error: "user blocked" });
   }
 
   const validar = validacion(user, pass);

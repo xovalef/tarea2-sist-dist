@@ -42,7 +42,6 @@ app.listen(5000, async function () {
         } else {
           incorrectLogins[user].push(Number(timestamp));
           const incorrectLoginsLength = incorrectLogins[user].length;
-          console.log(incorrectLogins);
           if (incorrectLoginsLength >= 5) {
             if (
               incorrectLogins[user][incorrectLoginsLength - 1] -
@@ -50,7 +49,7 @@ app.listen(5000, async function () {
               60 * 1000
             ) {
               blockedUsers.push(user);
-              const data = await fs.writeFile(
+              await fs.writeFile(
                 "/blockedUsers.json",
                 JSON.stringify(blockedUsers)
               );
