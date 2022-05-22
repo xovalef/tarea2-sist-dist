@@ -85,7 +85,7 @@ Tendrá una respuesta similar a:
 
 Kafka sirve para desacoplar servicios o aplicaciones que necesitan comunicarse entre si mediante mensajes en tiempo real por lo que en este caso funciona como intermediario entre los distintos servicios de consumidores y productores. Gracias a eso alcanza una gran escalabilidad ya que permite incorporar nuevos servicios a nuestro sistema y mantenerlos comunicados mediante el intermediario de Kafka y su paso de mensajes por topico.
 
-Para este escenario, kafka funciona bien ya que permite la comunicación entre diferentes servicios (login y security) desacoplando la conexión entre ellos y de esta manera logramos abstraer el enlace entre las distintas aplicaciones.
+Para este escenario, kafka funciona bien ya que permite la comunicación entre diferentes servicios (login y security) desacoplando la conexión entre ellos mediante producers y consumers, y de esta manera logramos abstraer el enlace entre las distintas aplicaciones.
 
 #### 2.- Basado en las tecnologías que usted tiene a su disposición (Kafka, backend) ¿Qué haría usted para manejar una gran cantidad de usuarios al mismo tiempo?
 
