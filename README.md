@@ -78,10 +78,15 @@ Tendrá una respuesta similar a:
 ```
 
 ---
+
 ### Preguntas:
 
 #### 1.- ¿Por qué Kafka funciona bien en este escenario?
+
 Kafka sirve para desacoplar servicios o aplicaciones que necesitan comunicarse entre si mediante mensajes en tiempo real por lo que en este caso funciona como intermediario entre los distintos servicios de consumidores y productores. Gracias a eso alcanza una gran escalabilidad ya que permite incorporar nuevos servicios a nuestro sistema y mantenerlos comunicados mediante el intermediario de Kafka y su paso de mensajes por topico.
 
-Para este escenario, kafka funciona bien ya que permite la comunicación entre diferentes servicios (login y security) desacoplando la conexión entre ellos. 
+Para este escenario, kafka funciona bien ya que permite la comunicación entre diferentes servicios (login y security) desacoplando la conexión entre ellos.
 
+#### 2.- Basado en las tecnologías que usted tiene a su disposición (Kafka, backend) ¿Qué haría usted para manejar una gran cantidad de usuarios al mismo tiempo?
+
+Gracias al sistema de pub/sub podemos dividir el procesamiento de datos en múltiples instancias de consumidores, lo que nos permite escalar horizontalmente nuestra aplicación y lograr manejar de esta manera una gran cantidad de usuarios simultaneamente.
