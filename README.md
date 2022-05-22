@@ -8,9 +8,7 @@
 
 ### Como ejecutar
 
-Para ejecutar este proyecto de una manera "sencilla", necesitas instalar [Docker](https://docs.docker.com/get-docker/) y
-
-[Docker Compose](https://docs.docker.com/compose/install/).
+Para ejecutar este proyecto de una manera "sencilla", necesitas instalar [Docker](https://docs.docker.com/get-docker/) y [Docker Compose](https://docs.docker.com/compose/install/).
 
 Basta con ejecutar:
 
