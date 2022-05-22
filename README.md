@@ -89,4 +89,4 @@ Para este escenario, kafka funciona bien ya que permite la comunicación entre d
 
 #### 2.- Basado en las tecnologías que usted tiene a su disposición (Kafka, backend) ¿Qué haría usted para manejar una gran cantidad de usuarios al mismo tiempo?
 
-Gracias al sistema de pub/sub podemos dividir el procesamiento de datos en múltiples instancias de consumidores, lo que nos permite escalar horizontalmente nuestra aplicación y lograr manejar de esta manera una gran cantidad de usuarios simultaneamente.
+Gracias al sistema de pub/sub de kafka podemos dividir el procesamiento de datos en múltiples instancias de consumidores, es decir tener muchas replicas de nuestro backend, lo que nos permite escalar horizontalmente nuestra aplicación y lograr manejar de esta manera una gran cantidad de usuarios simultaneamente.
