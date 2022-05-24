@@ -58,6 +58,8 @@ app.listen(5000, async function () {
             }
           }
         }
+      } else {
+        incorrectLogins[user] = [];
       }
     },
   });

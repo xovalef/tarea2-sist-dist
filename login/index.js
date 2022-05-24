@@ -27,7 +27,6 @@ app.post("/login", async function (req, res) {
 
   const validar = validacion(user, pass);
 
-  await producer.connect();
   await producer.send({
     topic: "login",
     messages: [
@@ -57,4 +56,7 @@ function validacion(user, pass) {
   }
 }
 
-app.listen(3000);
+app.listen(3000, async () => {
+  await producer.connect();
+  console.log("Listening in port 3000...");
+});
